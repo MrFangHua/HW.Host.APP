@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <AssemblyName>FH.Host.APP</AssemblyName>
+    <RootNamespace>FH.Host.APP</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\FH.Host.APP.Game\" />
+    <Folder Include="wwwroot\FH.Host.APP.Love\" />
+    <Folder Include="wwwroot\FH.Host.APP.UI\" />
+    <Folder Include="wwwroot\FH.Host.APP.Tool\" />
+  </ItemGroup>
+</Project>
