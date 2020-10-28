@@ -9,7 +9,7 @@
 
 /**
  * HTTP请求服务
- * @param {any} obj 请求方式、路径、参数。实例：obj: {method:"get",url:"",data:{},dataType:""};
+ * @param {any} obj 请求方式、路径、参数、是否在控制台显示结果。实例：obj: {method:"get",url:"",data:{},dataType:"",isDisCL:""};
  * @param {any} successFun 请求成功回调方法
  * @param {any} errorFun 请求失败回调方法
  * @param {any} async 是否异步，默认异步
@@ -38,6 +38,8 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
     xmlHttp.responseType = obj.dataType || "json";
     // url
     var httpUrl = obj.url || '';
+    // 是否在控制台显示结果
+    var httpIsDisCL = obj.isDisCL == null || obj.isDisCL == undefined || obj.isDisCL == '' && obj.isDisCL != true ? false : obj.isDisCL;
     // 判断是否为API请求
     var httpApiRequest = apiRequest == null || apiRequest == undefined || apiRequest == '' && apiRequest != false ? true : apiRequest;
     if (httpApiRequest) {
@@ -61,21 +63,6 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
             httpUrl += requestData;
         }
     }
-    // onreadystatechange 是一个事件句柄。
-    // 它的值(state_Change) 是一个函数的名称，当 XMLHttpRequest 对象的状态发生改变时，会触发此函数。状态从 0(uninitialized) 到 4(complete) 进行变化。仅在状态为 4 时，我们才执行代码
-    xmlHttp.onreadystatechange = function () {
-        // complete
-        if (xmlHttp.readyState == 4) {
-            console.log(xmlHttp);
-            if (xmlHttp.status == 200) {
-                // 请求成功执行的回调函数
-                successFun(xmlHttp.response, xmlHttp);
-            } else {
-                // 请求失败执行的回调函数
-                errorFun(xmlHttp, xmlHttp.status, xmlHttp.statusText);
-            }
-        }
-    }
     // 请求接口
     if (httpMethod == "GET") {
         xmlHttp.open("GET", httpUrl, httpAsync);
@@ -84,6 +71,23 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
         xmlHttp.open(httpMethod, httpUrl, httpAsync);
         xmlHttp.setRequestHeader("Content-Type", "application/json");
         xmlHttp.send(JSON.stringify(obj.data));
+    }
+    // onreadystatechange 是一个事件句柄。
+    // 它的值(state_Change) 是一个函数的名称，当 XMLHttpRequest 对象的状态发生改变时，会触发此函数。状态从 0(uninitialized) 到 4(complete) 进行变化。仅在状态为 4 时，我们才执行代码
+    xmlHttp.onreadystatechange = function () {
+        // complete
+        if (xmlHttp.readyState == 4) {
+            if (httpIsDisCL) {
+                console.log(xmlHttp);
+            }
+            if (xmlHttp.status == 200) {
+                // 请求成功执行的回调函数
+                successFun(xmlHttp.response, xmlHttp);
+            } else {
+                // 请求失败执行的回调函数
+                errorFun(xmlHttp, xmlHttp.status, xmlHttp.statusText);
+            }
+        }
     }
 }
 
