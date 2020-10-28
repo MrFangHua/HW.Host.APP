@@ -16,7 +16,8 @@ var appConfiguration = {
     // 站点版本
     Version: "V1.1.0",
     // 站点Url
-    Url: "https://fanghua.host",
+    Url: "http://localhost:8080",
+    // Url: "https://fanghua.host",
     // APIUrl
     ApiRequestUrl: "https://api.fanghua.host",
     // 备案信息
@@ -41,7 +42,7 @@ var appConfigFile = {
       "/assets/httpService/httpRequestService.js",
     // 音乐播放器信息
     MusicsPlayerJS:
-      '<script id="ilt" key="98ffa0f27310403e85637d328e6ba248" src="' + this.appConfiguration.ProjectInfo.Url + '/assets/plugins/player/player.min.js" ></script>',
+      '<script id="ilt" key="98ffa0f27310403e85637d328e6ba248" src="https://player.ilt.me/player/js/player.js" ></script>',
     // Layer.js文件
     LayerJSFile: this.appConfiguration.ProjectInfo.Url +
       "/assets/plugins/layer/layer.js",
@@ -51,7 +52,6 @@ var appConfigFile = {
 }
 
 var headHtml = document.getElementsByTagName("head").item(0);
-console.log(headHtml);
 
 var webSiteDate = new Date();
 
