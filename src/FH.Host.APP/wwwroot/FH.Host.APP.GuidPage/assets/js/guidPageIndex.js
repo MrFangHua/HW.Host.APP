@@ -16,7 +16,6 @@ var copywritingInfoData;
 /**引导页菜单信息 */
 var guidePagesMenuInfoData;
 window.onload = function () {
-    loadMusicsPlayer();
     // 设置站点名称
     $("#webSiteName")[0].innerText = appConfiguration.ProjectInfo.Project_Name;
 
