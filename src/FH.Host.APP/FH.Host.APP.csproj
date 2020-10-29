@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />
+  </ItemGroup>  
+
+  <ItemGroup>
     <Folder Include="wwwroot\FH.Host.APP.Game\" />
     <Folder Include="wwwroot\FH.Host.APP.Love\" />
     <Folder Include="wwwroot\FH.Host.APP.UI\" />
