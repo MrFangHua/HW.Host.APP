@@ -12,14 +12,15 @@ var appConfiguration = {
   // 站点信息
   ProjectInfo: {
     // 站点名称
-    Project_Name: "Mr.Fang网络",
+    Project_Name: "Mr.Fang 网络",
     // 站点版本
     Version: "V1.1.0",
     // 站点Url
-    Url: "http://localhost:8080",
-    // Url: "https://fanghua.host",
+    Url: "https://fanghua.host",
     // APIUrl
     ApiRequestUrl: "https://api.fanghua.host",
+    // 对象资源Url
+    ObjstorageUrl: "http://objstorage.fanghua.host",
     // 备案信息
     RecordInfo: "陇ICP备2020003856号",
     // 提示框头部信息
