@@ -19,6 +19,7 @@ var appConfiguration = {
     Url: "https://fanghua.host",
     // APIUrl
     ApiRequestUrl: "https://api.fanghua.host",
+    // ApiRequestUrl: "http://localhost:2000",
     // 对象资源Url
     ObjstorageUrl: "http://objstorage.fanghua.host",
     // 备案信息
