@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>引导页</title>
+    <link href="HW.Host.APP.GuidPage/assets/css/guidPageIndex.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="bg"></div>
+        <div id="overlay"></div>
+        <div id="main">
+            <!-- Header -->
+            <header id="header">
+                <h1 id="webSiteName"></h1>
+                <p id="webSiteCopywriting"></p>
+                <nav>
+                    <ul class="mom" id="webSiteGuidePagesMenuInfo"></ul>
+                </nav>
+                <br>
+            </header>
+            <!-- Footer -->
+            <footer id="footer"></footer>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/config/configService.js"></script>
+    <script>
+        // 加载HTTP请求服务
+        loadHttpRequestServer();
+    </script>
+    <script text="text/javascript" src="HW.Host.APP.GuidPage/assets/js/guidPageIndex.js"></script>
+</body>
+</html>
