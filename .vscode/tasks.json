@@ -9,7 +9,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/FH.Host.APP/FH.Host.APP.csproj"
+                "${workspaceFolder}/src/HW.Host.APP/HW.Host.APP.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

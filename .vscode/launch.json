@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/FH.Host.APP/bin/Debug/netcoreapp2.2/FH.Host.APP.dll",
+            "program": "${workspaceFolder}/src/HW.Host.APP/bin/Debug/netcoreapp2.2/HW.Host.APP.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/FH.Host.APP",
+            "cwd": "${workspaceFolder}/src/HW.Host.APP",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
