@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>登录</title>
+    <link href="assets/css/login/login.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/config/configService.js"></script>
+    <script type="text/javascript" src="assets/js/login/login.js"></script>
+</head>
+
+<body id="bg">
+    <h1>登录</h1>
+    <div class="form-Div">
+        <div class="form">
+            <h6>用户名</h6>
+            <input type="text" class="input-txt" placeholder="请输入账号" id="UserName">
+            <h6>密码</h6>
+            <input type="password" class="input-txt" placeholder="请输入密码" id="UserPwd">
+            <h6>安全码</h6>
+            <input type="text" class="input-txt" placeholder="请输入安全码" id="SecurityCode">
+            <div class="login-bottom">
+                <input class="submit" type="button" value="登录" onclick="return Login();" />
+                <h4>
+                    <a href="#">忘记密码？</a>
+                    <a href="UpdateUserPwd.html">修改密码</a>
+                </h4>
+                <h4>
+                    <a href="AdminLogin.html">管理员登录</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- 脚注 -->
+    <footer id="footer" class="footer-Div"></footer>
+</body>
+
+</html>

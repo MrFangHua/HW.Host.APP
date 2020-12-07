@@ -1,9 +1,40 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>首页</title>
+    <link href="assets/css/index/index.css" rel="stylesheet" />
+    <script type="text/javascript" src="assets/js/login/checkLogin.js"></script>
+    <script type="text/javascript" src="assets/config/configService.js"></script>
+    <script type="text/javascript" src="assets/js/index/index.js"></script>
+    <style type="text/css">
+        .phoneModelInfo {
+            width: 300px;
+            height: 720px;
+        }
+    </style>
 </head>
+
 <body>
+    <center>
+        <h1>Hua.MrF - 手机详情页面</h1>
+        <button>领取手机</button>
+        <button>归还手机</button>
+        <table id="tb" style="width: 90%; text-align: center;" border="1" cellpadding="0" cellspacing="0">
+            <tr>
+                <th style="width: 20%;">手机型号</th>
+                <th style="width: 5%;">颜色</th>
+                <th style="width: 15%;">归还时间</th>
+                <th style="width: 10%;">当前领取员工</th>
+                <th style="width: 15%;">领取时间</th>
+                <th style="width: 10%;">备注</th>
+                <th style="width: 10%;">操作</th>
+            </tr>
+        </table>
+    </center>
+    <!-- 脚注 -->
+    <footer id="footer" class="footer-Div"></footer>
 </body>
+
 </html>

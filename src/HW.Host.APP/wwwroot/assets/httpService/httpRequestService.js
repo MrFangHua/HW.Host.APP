@@ -9,7 +9,7 @@
 
 /**
  * HTTP请求服务
- * @param {any} obj 请求方式、路径、参数、是否在控制台显示结果。实例：obj: {method:"get",url:"",data:{},dataType:"",isDisCL:""};
+ * @param {any} obj 请求方式、路径、参数、是否在控制台显示结果。实例：obj: {method:"get",url:"",data:{},dataType:"",isDisCL:"",isAuthorization:""};
  * @param {any} successFun 请求成功回调方法
  * @param {any} errorFun 请求失败回调方法
  * @param {any} async 是否异步，默认异步
@@ -40,6 +40,8 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
     var httpUrl = obj.url || '';
     // 是否在控制台显示结果
     var httpIsDisCL = obj.isDisCL == null || obj.isDisCL == undefined || obj.isDisCL == '' && obj.isDisCL != true ? false : obj.isDisCL;
+    // 是否为带权限请求
+    var httpIsAuthorization = obj.isAuthorization == null || obj.isAuthorization == undefined || obj.isAuthorization == '' && obj.isAuthorization != true ? false : obj.isAuthorization;
     // 判断是否为API请求
     var httpApiRequest = apiRequest == null || apiRequest == undefined || apiRequest == '' && apiRequest != false ? true : apiRequest;
     if (httpApiRequest) {
@@ -64,11 +66,14 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
         }
     }
     // 请求接口
+    xmlHttp.open(httpMethod, httpUrl, httpAsync);
+    // 发送Token
+    if (httpIsAuthorization) {
+        xmlHttp.setRequestHeader("Authorization", uncompileStr(sessionStorage.getItem("CurrentToken")));
+    }
     if (httpMethod == "GET") {
-        xmlHttp.open("GET", httpUrl, httpAsync);
         xmlHttp.send(null);
     } else {
-        xmlHttp.open(httpMethod, httpUrl, httpAsync);
         xmlHttp.setRequestHeader("Content-Type", "application/json");
         xmlHttp.send(JSON.stringify(obj.data));
     }
@@ -81,11 +86,23 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
                 console.log(xmlHttp);
             }
             if (xmlHttp.status == 200) {
-                // 请求成功执行的回调函数
-                successFun(xmlHttp.response, xmlHttp);
+                if (successFun != undefined) {
+                    // 请求成功执行的回调函数
+                    successFun(xmlHttp.response, xmlHttp);
+                }
             } else {
-                // 请求失败执行的回调函数
-                errorFun(xmlHttp, xmlHttp.status, xmlHttp.statusText);
+                // 判断是否为401 Unauthorized错误，权限验证过期错误
+                if (xmlHttp.status == 401 && xmlHttp.statusText == "Unauthorized" && _InterVal_Handler != -1) {
+                    _InterVal_Handler = -1;
+                    checkExpired();
+                } else {
+                    if (errorFun == undefined) {
+                        layer.msg(xmlHttp.response.ResultInfo ? xmlHttp.response.ResultInfo : "系统错误，请联系管理员处理，或刷新页面试试~", function () { });
+                    } else {
+                        // 请求失败执行的回调函数
+                        errorFun(xmlHttp, xmlHttp.status, xmlHttp.statusText);
+                    }
+                }
             }
         }
     }

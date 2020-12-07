@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <AssemblyName>FH.Host.APP</AssemblyName>
-    <RootNamespace>FH.Host.APP</RootNamespace>
+    <AssemblyName>HW.Host.APP</AssemblyName>
+    <RootNamespace>HW.Host.APP</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

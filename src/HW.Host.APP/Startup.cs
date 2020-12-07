@@ -29,7 +29,7 @@ namespace FH.Host.APP.Core
             // 设置默认启动页为引导页面
             DefaultFilesOptions defaultFilesOptions = new DefaultFilesOptions();
             defaultFilesOptions.DefaultFileNames.Clear();
-            defaultFilesOptions.DefaultFileNames.Add("HW.Host.APP.GuidPage/GuidPageIndex.html");
+            defaultFilesOptions.DefaultFileNames.Add("GuidPageIndex.html");
             app.UseDefaultFiles(defaultFilesOptions);
 
             app.UseHttpsRedirection(); // 强制把HTTP请求转换HTTPS
