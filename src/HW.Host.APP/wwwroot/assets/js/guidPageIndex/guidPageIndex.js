@@ -19,6 +19,15 @@ var guidePagesMenuInfoData;
 WaitJSLoadSuccess(function () {
     // 设置站点名称
     $("#webSiteName")[0].innerText = appConfiguration.ProjectInfo.Project_Name;
+    if (Boolean(sessionStorage.getItem("IsLogin"))) {
+        if (Boolean(sessionStorage.getItem("UserName"))) {
+            $("#isLogin").text("用户【" + uncompileStr(sessionStorage.getItem("UserName")) + "】已登录~");
+        } else {
+            $("#isLogin").text("已登录~");
+        }
+    } else {
+        $("#isLogin").text("您还未登录系统~");
+    }
     getBackGroundImageInfo();
     getCopywritingInfo();
     //getGuidePagesMenuInfo();

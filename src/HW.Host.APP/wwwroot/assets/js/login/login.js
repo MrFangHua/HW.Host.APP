@@ -49,7 +49,8 @@ function Login() {
             // 储存Token到SessionStorage中
             sessionStorage.setItem("CurrentToken", compileStr(result.resultInfo));
             sessionStorage.setItem("IsAdmin", "0");
-            location.href = "Index.html";
+            sessionStorage.setItem("UserName", compileStr($("#UserName").val()));
+            location.href = "GuidPageIndex.html";
         }
     });
 }
