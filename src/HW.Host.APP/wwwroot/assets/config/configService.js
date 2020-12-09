@@ -19,7 +19,7 @@ var appConfiguration = {
         Url: "http://192.168.6.88",
         // APIUrl
         ApiRequestUrl: "http://192.168.6.88:2000",
-        // ApiRequestUrl: "http://localhost:2000",
+        //ApiRequestUrl: "http://localhost:2000",
         // 对象资源Url
         ObjstorageUrl: "http://192.168.6.88:8888",
         // 备案信息
@@ -176,9 +176,14 @@ function getRandom(maxIndexOf, minIndexOf) {
 }
 /**
  * 对字符串进行加密
- * @param {*} code 要加密的字符串
+ * @param {String} code 要加密的字符串
  */
 function compileStr(code) {
+    if (!code) {
+        return null;
+    }
+    // 防止int类型传值进来报错
+    code = code.toString();
     var c = String.fromCharCode(code.charCodeAt(0) + code.length);
     for (var i = 1; i < code.length; i++) {
         c += String.fromCharCode(code.charCodeAt(i) + code.charCodeAt(i - 1));
@@ -188,9 +193,14 @@ function compileStr(code) {
 
 /**
  * 字符串进行解密
- * @param {*} code 要解密的字符串
+ * @param {String} code 要解密的字符串
  */
 function uncompileStr(code) {
+    // 防止int类型传值进来报错
+    if (!code) {
+        return null;
+    }
+    code = code.toString();
     code = unescape(code);
     var c = String.fromCharCode(code.charCodeAt(0) - code.length);
     for (var i = 1; i < code.length; i++) {
