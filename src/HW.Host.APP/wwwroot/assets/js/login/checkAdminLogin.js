@@ -19,7 +19,7 @@ var _InterVal_Handler = -1;
  * 判断是否登陆
  */
 function AdminIsLogin() {
-    return Boolean(sessionStorage.getItem("AdminIsLogin"));
+    return Boolean(uncompileStr(sessionStorage.getItem("AdminIsLogin")));
 }
 /**
  * 检查登陆信息
