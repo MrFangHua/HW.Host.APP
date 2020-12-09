@@ -1,0 +1,10 @@
+select {
+  width: 600px;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+textarea {
+  width: 600px;
+  font-size: 1.2rem;
+}
