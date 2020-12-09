@@ -5,23 +5,18 @@
     <meta charset="utf-8" />
     <title>首页</title>
     <link href="assets/css/index/index.css" rel="stylesheet" />
-    <script type="text/javascript" src="assets/js/login/checkLogin.js"></script>
     <script type="text/javascript" src="assets/config/configService.js"></script>
+    <script type="text/javascript" src="assets/js/login/checkLogin.js"></script>
     <script type="text/javascript" src="assets/js/index/index.js"></script>
-    <style type="text/css">
-        .phoneModelInfo {
-            width: 300px;
-            height: 720px;
-        }
-    </style>
 </head>
 
 <body>
     <center>
         <h1>Hua.MrF - 手机详情页面</h1>
-        <button>领取手机</button>
-        <button>归还手机</button>
-        <table id="tb" style="width: 90%; text-align: center;" border="1" cellpadding="0" cellspacing="0">
+        <button style="margin-left: 70%; font-size: 1.1rem;" onclick="ReceivePhone();">领取手机</button>
+        <button style="margin-left: 1%; font-size: 1.1rem;" onclick="ReturnPhone();">归还手机</button>
+        <table id="tb" style="width: 90%; text-align: center; margin-top: 5px;" border="1" cellpadding="0"
+            cellspacing="0">
             <tr>
                 <th style="width: 20%;">手机型号</th>
                 <th style="width: 5%;">颜色</th>
