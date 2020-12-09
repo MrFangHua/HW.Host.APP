@@ -45,11 +45,12 @@ function Login() {
     }, function (result) {
         if (result.success) {
             sessionStorage.clear();
-            sessionStorage.setItem("IsLogin", "1");
+            sessionStorage.setItem("IsLogin", compileStr("1"));
             // 储存Token到SessionStorage中
             sessionStorage.setItem("CurrentToken", compileStr(result.resultInfo));
-            sessionStorage.setItem("IsAdmin", "0");
+            sessionStorage.setItem("UserId", compileStr(result.userId));
             sessionStorage.setItem("UserName", compileStr($("#UserName").val()));
+            sessionStorage.setItem("IsAdmin", compileStr("0"));
             location.href = "GuidPageIndex.html";
         }
     });

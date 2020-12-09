@@ -39,10 +39,12 @@ function Login() {
     }, function (result) {
         if (result.success) {
             sessionStorage.clear();
-            sessionStorage.setItem("AdminIsLogin", "1");
+            sessionStorage.setItem("IsLogin", compileStr("1"));
             // 储存Token到SessionStorage中
             sessionStorage.setItem("CurrentToken", compileStr(result.resultInfo));
-            sessionStorage.setItem("IsAdmin", "1");
+            sessionStorage.setItem("AdminId", compileStr(result.adminId));
+            sessionStorage.setItem("AdminName", compileStr($("#AdminName").val()));
+            sessionStorage.setItem("IsAdmin", compileStr("1"));
             location.href = "AdminIndex.html";
         }
     });
