@@ -52,7 +52,7 @@ function httpRequest(obj, successFun, errorFun, async = true, apiRequest = true)
     // 异步请求
     var httpAsync = async == null || async == undefined || async == '' && async != false ? true : async;
     // get请求时参数处理
-    if (httpMethod == "GET") {
+    if (httpMethod == "GET" || httpMethod == "DELETE") {
         // 请求体中的参数get请求参数格式为：?paraml=test&param2=test2
         var data = obj.data || {};
         var requestData = '';
