@@ -18,8 +18,8 @@ var appConfiguration = {
         // 站点Url
         Url: "http://192.168.6.88",
         // APIUrl
-        // ApiRequestUrl: "http://192.168.6.88:2000",
-        ApiRequestUrl: "http://localhost:2000",
+        ApiRequestUrl: "http://192.168.6.88:2000",
+        // ApiRequestUrl: "http://localhost:2000",
         // 对象资源Url
         ObjstorageUrl: "http://192.168.6.88:8888",
         // 备案信息
