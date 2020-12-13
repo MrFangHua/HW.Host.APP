@@ -18,8 +18,8 @@ var appConfiguration = {
         // 站点Url
         Url: "http://192.168.6.88",
         // APIUrl
-        ApiRequestUrl: "http://192.168.6.88:2000",
-        //ApiRequestUrl: "http://localhost:2000",
+        // ApiRequestUrl: "http://192.168.6.88:2000",
+        ApiRequestUrl: "http://localhost:2000",
         // 对象资源Url
         ObjstorageUrl: "http://192.168.6.88:8888",
         // 备案信息
@@ -42,7 +42,7 @@ var appConfigFile = {
         // Http请求服务配置JS文件
         HttpRequestSeiverJSFile: this.appConfiguration.ProjectInfo.Url +
             "/assets/httpService/httpRequestService.js",
-        //HttpRequestSeiverJSFile: "assets/httpService/httpRequestService.js",
+        // HttpRequestSeiverJSFile: "assets/httpService/httpRequestService.js",
         // 音乐播放器信息
         MusicsPlayerJS:
             '<script id="ilt" key="98ffa0f27310403e85637d328e6ba248" src="https://player.ilt.me/player/js/player.js" ></script>',

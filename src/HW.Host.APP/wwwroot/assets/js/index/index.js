@@ -1,3 +1,12 @@
+/*
+ * 首页 JS文件
+ * Author：Mr.Fang
+ * QQ：2875616188
+ * Version：1.1.0
+ * WebSite：https://fanghua.host
+ * Time：2020.3.27
+ */
+
 // 手机型号集合
 var phoneModelList = [];
 var tableFirstTrName;

@@ -1,3 +1,12 @@
+/*
+ * 手机领取 JS文件
+ * Author：Mr.Fang
+ * QQ：2875616188
+ * Version：1.1.0
+ * WebSite：https://fanghua.host
+ * Time：2020.3.27
+ */
+
 // 下拉框数量
 var selectIndex = 3;
 var selectMaxIndex = 3;
@@ -117,9 +126,8 @@ function ReceivePhone() {
             isAuthorization: true
         }, function (result) {
             if (result.success) {
-                layer.msg("领取成功，请手动关闭窗口~", function () {
-                    $("#receivePhone").hide();
-                });
+                $("#receivePhone").hide();
+                layer.msg("领取成功，请手动关闭窗口~", null);
             }
         });
     } else {

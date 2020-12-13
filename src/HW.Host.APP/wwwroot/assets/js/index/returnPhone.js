@@ -1,3 +1,12 @@
+/*
+ * 手机归还 JS文件
+ * Author：Mr.Fang
+ * QQ：2875616188
+ * Version：1.1.0
+ * WebSite：https://fanghua.host
+ * Time：2020.3.27
+ */
+
 var phoneModelList = {};
 var modelList = [];
 var phoneModelHTML;
@@ -60,9 +69,8 @@ function ReturnPhone() {
         isAuthorization: true
     }, function (result) {
         if (result.success) {
-            layer.msg("归还成功，请手动关闭窗口~", function () {
-                $("#returnPhone").hide();
-            });
+            $("#returnPhone").hide();
+            layer.msg("归还成功，请手动关闭窗口~", null);
         }
     });
 }

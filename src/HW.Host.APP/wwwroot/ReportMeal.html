@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <link href="assets/css/index/reportMeal.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/plugins/layui/css/layui.css" media="all">
+    <script type="text/javascript" src="assets/config/configService.js"></script>
+    <script type="text/javascript" src="assets/js/login/checkLogin.js"></script>
+    <script type="text/javascript" src="assets/plugins/layui/layui.all.js"></script>
+    <script type="text/javascript" src="assets/js/reportMeal/reportMeal.js"></script>
+</head>
+
+<body>
+    <div id="leftDiv">
+        <center>
+            <div id="leftTopDiv">
+                <br /><br />
+                <div id="Meal"></div>
+                <br />
+                <button id="addBtn" style="margin-left: 60%; font-size: 1.1rem;" onclick="AddCheck();">添加</button>
+                <button id="deleteBtn" style="margin-left: 5px; font-size: 1.1rem;" onclick="DeleteCheck();">删除</button>
+                <br /><br /><br />
+                <button style="margin-left: 80%; font-size: 1.5rem;" onclick="AddReportMeal();">报餐</button>
+            </div>
+            <div id="leftDownDiv">
+                <table class="layui-hide" id="leftDownDivTB" lay-filter="leftDownDivTB"></table>
+            </div>
+        </center>
+    </div>
+    <div id="RightDiv">
+        <center>
+            <h1>Hua.MrF - 报餐详情</h1><br /><br />
+            <label id="currentReportMealInfoText"></label>
+            <br /><br />
+            <label id="nextReportMealInfoText"></label>
+            <br />
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">当天报餐详情</li>
+                    <li>明天报餐详情</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <center>
+                            <table class="layui-hide" id="rightDivCurrentTB" lay-filter="rightDivCurrentTB"></table>
+                        </center>
+                    </div>
+                    <div class="layui-tab-item">
+                        <center>
+                            <table class="layui-hide" id="rightDivNextTB" lay-filter="rightDivNextTB"></table>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+    <!-- 脚注 -->
+    <footer id="footer" class="footer-Div"></footer>
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+</body>
+
+</html>
