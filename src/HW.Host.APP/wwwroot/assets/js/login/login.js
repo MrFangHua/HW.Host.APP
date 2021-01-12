@@ -9,7 +9,7 @@
 
 WaitJSLoadSuccess(function () {
     var BGIndex = Math.floor(Math.random() * 100) + 1;
-    document.getElementById("bg").style["background"] = "url(http://192.168.6.88:8888/assets/images/backGround/bg" + BGIndex + ".jpg)no-repeat";
+    document.getElementById("bg").style["background"] = "url(" + appConfiguration.ProjectInfo.ObjstorageUrl + "/assets/images/backGround/bg" + BGIndex + ".jpg)no-repeat";
     // 绑定登录按钮回车键
     document.onkeydown = function (e) {
         if (!e) {

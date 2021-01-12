@@ -21,7 +21,7 @@ var appConfiguration = {
         // ApiRequestUrl: "http://192.168.6.88:2000",
         ApiRequestUrl: "https://hwapi.fanghua.host",
         // 对象资源Url
-        ObjstorageUrl: "https://objstorage.fanghua.host/",
+        ObjstorageUrl: "https://objstorage.fanghua.host",
         // 备案信息
         RecordInfo: "陇ICP备2020003856号",
         // 提示框头部信息
