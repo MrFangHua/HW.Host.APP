@@ -16,12 +16,12 @@ var appConfiguration = {
         // 站点版本
         Version: "V1.1.0",
         // 站点Url
-        Url: "http://192.168.6.88",
+        Url: "https://hw.fanghua.host",
         // APIUrl
-        ApiRequestUrl: "http://192.168.6.88:2000",
-        // ApiRequestUrl: "http://localhost:2000",
+        // ApiRequestUrl: "http://192.168.6.88:2000",
+        ApiRequestUrl: "https://hwapi.fanghua.host",
         // 对象资源Url
-        ObjstorageUrl: "http://192.168.6.88:8888",
+        ObjstorageUrl: "http://objstorage.fanghua.host/",
         // 备案信息
         RecordInfo: "陇ICP备2020003856号",
         // 提示框头部信息
